@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+/* ── Tailwind v4 theme tokens ─────────────────────────────── */
+@theme {
+  --color-primary: #a4161a;
+  --color-primary-dark: #8b1116;
+  --color-gold: #d4af37;
+  --color-gold-light: #fef3c7;
+  --color-charcoal: #111827;
+  --color-muted: #4b5563;
+  --color-muted-bg: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+  --color-surface: #f9fafb;
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+  --color-card: #ffffff;
+  --color-card-foreground: #111827;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #111827;
+  --color-border: #e5e7eb;
+  --color-input: #e5e7eb;
+  --color-ring: #a4161a;
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ── Brand Red Custom Cursor & Caret ───────────────────────── */
+:root {
+  --brand-red: #a4161a;
+  --brand-red-dark: #8b1116;
+  --cursor-default: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5.5 3.2L18.8 12.2L12.5 13.5L9.5 19.8L5.5 3.2Z" fill="%23a4161a" stroke="%23ffffff" stroke-width="1.8" stroke-linejoin="round"/></svg>') 5 3, auto;
+  --cursor-pointer: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M9 3a1.5 1.5 0 0 1 3 0v7h.5a1.5 1.5 0 0 1 3 0v.5h.5a1.5 1.5 0 0 1 3 0V12a1.5 1.5 0 0 1 3 0v4.5c0 4-3.2 7.2-7.2 7.2H13c-2.3 0-4.4-1.1-5.6-3l-3.2-5a1.6 1.6 0 0 1 2.6-1.8L8 15.5V3a1.5 1.5 0 0 1 1-1z" fill="%23a4161a" stroke="%23ffffff" stroke-width="1.5" stroke-linejoin="round"/></svg>') 9 2, pointer;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background: #faf9f7;
+  color: #111827;
+  cursor: var(--cursor-default);
+}
+
+a,
+button,
+[role="button"],
+select,
+summary,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+.cursor-pointer,
+a *,
+button *,
+[role="button"] * {
+  cursor: var(--cursor-pointer);
+}
+
+input,
+textarea,
+select,
+[contenteditable="true"] {
+  caret-color: var(--brand-red);
+}
+
+::selection {
+  background-color: #a4161a;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #a4161a;
+  color: #ffffff;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Landing page warm gradient shell ─────────────────────── */
+.mv-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(164, 22, 26, 0.08), transparent 28rem),
+    radial-gradient(circle at top left, rgba(100, 20, 22, 0.05), transparent 20rem),
+    linear-gradient(180deg, #f8f4f2 0px, #ffffff 360px, #faf9f7 100%);
+  color: #152a3a;
+  line-height: 1.6;
+}
+
+/* ── Soft card utility ────────────────────────────────────── */
+.mv-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e4e7ec;
+  border-radius: 26px;
+  box-shadow: 0 18px 48px rgba(16, 24, 40, 0.05);
+}
+.mv-card-sm {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e4e7ec;
+  border-radius: 18px;
+  box-shadow: 0 18px 36px rgba(16, 24, 40, 0.04);
+}
+.mv-panel {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e4e7ec;
+  border-radius: 30px;
+  box-shadow: 0 24px 80px rgba(16, 24, 40, 0.08);
+}
+
+/* ── Details accordion reset ──────────────────────────────── */
+.mv-detail summary {
+  list-style: none;
+  cursor: pointer;
+}
+.mv-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ── Clerk Custom Theme (Slack-style & MediVoice Crimson) ── */
+.cl-rootBox {
+  font-family: var(--font-sans) !important;
+  width: 100% !important;
+}
+
+.cl-card {
+  border-radius: 1rem !important;
+  border: 1px solid rgba(229, 231, 235, 0.9) !important;
+  box-shadow:
+    0 16px 40px -10px rgba(0, 0, 0, 0.08),
+    0 4px 12px -2px rgba(0, 0, 0, 0.02) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px) !important;
+}
+
+.cl-headerTitle {
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.cl-headerSubtitle {
+  color: #6b7280 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.4 !important;
+}
+
+.cl-socialButtonsBlockButton {
+  border-radius: 0.75rem !important;
+  border: 1px solid #e5e7eb !important;
+  background-color: #ffffff !important;
+  transition: all 0.15s ease-in-out !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+}
+
+.cl-socialButtonsBlockButton:hover {
+  background-color: #f9fafb !important;
+  border-color: #d1d5db !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04) !important;
+}
+
+.cl-formButtonPrimary {
+  background-color: var(--color-primary, #a4161a) !important;
+  color: #ffffff !important;
+  border-radius: 0.75rem !important;
+  font-weight: 600 !important;
+  font-size: 0.9375rem !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background-color: var(--color-primary-dark, #8b1116) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(164, 22, 26, 0.25) !important;
+}
+
+.cl-formButtonPrimary:active {
+  transform: translateY(0);
+}
+
+.cl-formFieldInput {
+  border-radius: 0.75rem !important;
+  border: 1px solid #e5e7eb !important;
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  font-size: 0.9375rem !important;
+  transition: all 0.15s ease !important;
+}
+
+.cl-formFieldInput:focus {
+  border-color: #a4161a !important;
+  box-shadow: 0 0 0 3px rgba(164, 22, 26, 0.15) !important;
+}
+
+.cl-formFieldLabel {
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #374151 !important;
+}
+
+.cl-footerActionLink {
+  color: #a4161a !important;
+  font-weight: 600 !important;
+  transition: color 0.15s ease !important;
+}
+
+.cl-footerActionLink:hover {
+  color: #8b1116 !important;
+  text-decoration: underline !important;
+}
+
+.cl-identityPreview {
+  border-radius: 0.75rem !important;
+  border: 1px solid #e5e7eb !important;
+  background-color: #f9fafb !important;
+}
+
+.cl-identityPreviewEditButton {
+  color: #a4161a !important;
+  font-weight: 600 !important;
+}
+
+.cl-identityPreviewEditButton:hover {
+  color: #8b1116 !important;
+}
+
+.cl-userButtonPopoverCard {
+  border-radius: 1rem !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.cl-internal-b3fm6y {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.cl-internal-b3fm6y:hover {
+  opacity: 1;
+}
