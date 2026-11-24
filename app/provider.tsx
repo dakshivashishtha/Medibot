@@ -67,7 +67,7 @@ function Provider({ children }: Readonly<{ children: React.ReactNode }>) {
           <OnboardingModal
             isOpen={isOnboardingOpen}
             userEmail={user?.primaryEmailAddress?.emailAddress || "patient@medivoice.ai"}
-            initialName={user?.fullName || user?.firstName || "Santhosh Kumar"}
+            initialName={user?.fullName || user?.firstName || "Dakshi Vashishtha"}
             onComplete={(updatedData) => {
               setUserDetails(updatedData);
               setIsOnboardingOpen(false);

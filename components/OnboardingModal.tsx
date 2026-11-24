@@ -112,7 +112,7 @@ export default function OnboardingModal({
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="e.g. Santhosh Kumar"
+              placeholder="e.g. Dakshi Vashishtha"
               className="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 text-xs text-gray-900 font-medium focus:outline-none focus:border-[#a4161a] focus:ring-1 focus:ring-[#a4161a] transition"
             />
           </div>
