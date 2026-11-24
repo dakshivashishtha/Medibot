@@ -5,6 +5,7 @@ import HistoryList from "./_components/HistoryList";
 import MentalHealthSection from "./_components/MentalHealthSection";
 import RecentReportsPreview from "./_components/RecentReportsPreview";
 import SymptomCheckerBanner from "./_components/SymptomCheckerBanner";
+import SymptomPredictor from "@/components/SymptomPredictor";
 import UpcomingAppointmentsWidget from "./_components/UpcomingAppointmentsWidget";
 import MedicationTrackerWidget from "./_components/MedicationTrackerWidget";
 import VitalsMonitorWidget from "./_components/VitalsMonitorWidget";
@@ -41,6 +42,11 @@ function Dashboard() {
       {/* Section 2: Smart Symptom Checker Hero Banner */}
       <section>
         <SymptomCheckerBanner />
+      </section>
+
+      {/* Section 2.2: ML Symptom Predictor (Naive Bayes) */}
+      <section>
+        <SymptomPredictor />
       </section>
 
       {/* Section 2.5: Scheduled Appointments, Medication & Live Vitals Widgets */}
